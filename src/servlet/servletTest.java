@@ -9,18 +9,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/servlet/servlettest")//[1]
+import tool.Page;
+
+
+@WebServlet("/servlet/servlettest")
+
 public class servletTest extends HttpServlet{
+public void doPost(
 
-	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {//[3]
-	        response.setContentType("text/html; charset=UTF-8");//[4]
+			HttpServletRequest request,HttpServletResponse response
+			)throws ServletException, IOException{
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out=response.getWriter();
 
-	        String yes = request.getParameter("yesno");//[6]
-	        PrintWriter out = response.getWriter();//[7]
-	        out.println("<html><head></head><body>");//[8]
-	        out.println("<p>この度は資料請求いただきありがとうございます。以下のリンクから資料ダウンロードが可能です。</p>");//[9]
-	        out.println("</body></html>");//[12]
-	    }
+				String yesno=request.getParameter("yesno");
+				String yes="yes";
 
+				Page.header(out);
+
+
+				if(yesno.equals("yes")) {
+					request.getRequestDispatcher("../jsp/contact3.jsp")
+					.forward(request, response);
+				}else {
+					request.getRequestDispatcher("../jsp/contact2.jsp")
+					.forward(request, response);
+				}
+
+				Page.footer(out);
+
+}
 }

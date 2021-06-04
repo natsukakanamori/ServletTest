@@ -3,6 +3,6 @@
 <%@include file="../header.html" %>
 
 <p>この度は資料請求いただきありがとうございます。以下のリンクから資料ダウンロードが可能です。</p>
-<p>http://www.dummyurl.com/</p>
+<p></p>
 
 <%@include file="../footer.html" %>

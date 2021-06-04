@@ -4,7 +4,7 @@
 <link rel="stylesheet"  href="../contact.css">
 
 <p><b>お問い合わせ内容</b></p>
-<form action="contact2.jsp" method="post">
+<form action="../servlet/servlettest" method="post">
 	<table>
 		<tr>
 			<th>氏名:</th>
@@ -38,8 +38,8 @@
 
 		<tr>
 			<th>資料請求希望:</th>
-			<td><input type="radio" name="yesno" value="Yes" >Yes
-				<input type="radio" name="yesno" value="No" >No
+			<td><input type="radio" name="yesno" value="yes" >Yes
+				<input type="radio" name="yesno" value="no" >No
 			</td>
 		</tr>
 	</table>
